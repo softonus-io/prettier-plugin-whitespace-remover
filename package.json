@@ -1,0 +1,36 @@
+{
+  "name": "@softonus/prettier-plugin-whitespace-remover",
+  "version": "1.0.0",
+  "description": "Prettier plugin that removes whitespaces of className",
+  "main": "dist/index.min.js",
+  "files": [
+    "dist/index.min.js"
+  ],
+  "scripts": {
+    "build": "tsc && terser dist/index.js -o dist/index.min.js -c -m",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "softonus",
+    "whitespace",
+    "whitespace remover",
+    "class whitespace remover",
+    "className whitespace remover",
+    "@softonus",
+    "@softonus/prettier-plugin-whitespace-remover",
+    "prettier-plugin-whitespace-remover"
+  ],
+  "author": {
+    "name": "Softonus LLC",
+    "email": "hello@softonus.com",
+    "url": "https://softonus.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.6.0",
+    "prettier": "^3.2.5",
+    "terser": "^5.30.3",
+    "typescript": "5.3.3"
+  }
+}
