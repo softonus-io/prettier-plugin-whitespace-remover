@@ -33,11 +33,6 @@ Create a `.prettierrc` file in your project's root directory with the following 
 }
 ```
 
-<!-- ALL-CONTRIBUTORS-LIST:START -->
-| [ebokoo](https://github.com/ebokoo) | code |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-
 ## 📨 Contact
 
 For contact, email ebo@softonus.com
