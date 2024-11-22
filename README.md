@@ -1,5 +1,5 @@
 ## 🚀 About
-Prettier plugin that removes whitespaces of className
+Prettier plugin that removes whitespaces of className, class
 
 
 ## 🗂 Install
