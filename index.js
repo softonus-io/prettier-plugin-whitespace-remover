@@ -1,36 +1,44 @@
-const { parsers: typescriptParsers } = require('prettier/parser-typescript')
-const { parsers: javascriptParsers } = require('prettier/parser-babel')
-const { parsers: htmlParsers } = require('prettier/parser-html')
+const { parsers: typescriptParsers } = require('prettier/parser-typescript');
+const { parsers: javascriptParsers } = require('prettier/parser-babel');
+const { parsers: htmlParsers } = require('prettier/parser-html');
 
-function preprocess(text, opts) {
-  const classNamePattern = /className\s*=\s*["']([^"']+)["']/g
+function preprocessClassName(text) {
+  const classNamePattern = /className\s*=\s*["']([^"']+)["']/g;
   return text.replace(classNamePattern, (match, classNames) => {
-    const cleanClassNames = classNames.trim().replace(/\s+/g, ' ')
-    return `className="${cleanClassNames}"`
-  })
+    const cleanClassNames = classNames.trim().replace(/\s+/g, ' ');
+    return `className="${cleanClassNames}"`;
+  });
 }
 
-function preprocessVue(text, opts) {
-  const classNamePatternVue = /class\s*=\s*["']([^"']+)["']/g
-  return text.replace(classNamePatternVue, (match, classNames) => {
-    const cleanClassNames = classNames.trim().replace(/\s+/g, ' ')
-    return `class="${cleanClassNames}"`
-  })
+function preprocessClass(text) {
+  const classPattern = /class\s*=\s*["']([^"']+)["']/g;
+  return text.replace(classPattern, (match, classNames) => {
+    const cleanClassNames = classNames.trim().replace(/\s+/g, ' ');
+    return `class="${cleanClassNames}"`;
+  });
 }
 
 module.exports = {
   parsers: {
     typescript: {
       ...typescriptParsers.typescript,
-      preprocess
+      preprocess: preprocessClassName 
     },
     babel: {
       ...javascriptParsers.babel,
-      preprocess
+      preprocess: preprocessClassName 
     },
     vue: {
       ...htmlParsers.html,
-      preprocess: preprocessVue
+      preprocess: preprocessClass
+    },
+    angular: {
+      ...htmlParsers.html,
+      preprocess: preprocessClass 
+    },
+    html: {
+      ...htmlParsers.html,
+      preprocess: preprocessClass 
     }
   }
-}
+};

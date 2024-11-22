@@ -1,7 +1,7 @@
 {
   "name": "@softonus/prettier-plugin-whitespace-remover",
-  "version": "1.1.1",
-  "description": "Prettier plugin that removes whitespaces of className",
+  "version": "1.2.1",
+  "description": "Prettier plugin that removes whitespaces of className, class",
   "main": "dist/index.min.js",
   "files": [
     "dist/index.min.js"
